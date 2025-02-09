@@ -41,31 +41,31 @@ While these models offer valuable insights, they often fail in real-world applic
 
 ## 📌 **Key Features of This Architecture Model**
 
-### ** 1. Path Context - Self-Explanatory File Structure**
+### **1. Path Context - Self-Explanatory File Structure**
 
 🔹 **Removes redundant file names** – The directory path itself provides the necessary context.  
 🔹 **Enhances scalability** – New files can be added within a structured hierarchy without clutter.  
 🔹 **Improves navigation** – Developers can instantly understand a file's purpose just by looking at its path.  
 
-### ** 2. Scope - Understanding the Impact of Changes**
+### **2. Scope - Understanding the Impact of Changes**
 
 🔹 **Defines the influence of each file on the system** – Knowing whether an issue is isolated or critical saves debugging time.  
 🔹 **Prevents unintended side effects** – Ensures that modifications don’t break the entire application.  
 🔹 **Encourages maintainability** – Clear separation of responsibilities reduces complexity.  
 
-### ** 3. Horizontal Code Scalability**
+### **3. Horizontal Code Scalability**
 
 🔹 **Encourages feature expansion without excessive refactoring** – New logic is introduced as additional files instead of modifying existing ones.  
 🔹 **Eliminates deep file nesting** – Keeps the structure flat and readable, reducing unnecessary layers of abstraction.  
 🔹 **Ensures a consistent approach to growth** – Scaling is based on new entities and functionalities, not arbitrary complexity.  
 
-### ** 4. Developer-Friendly Design - Lower Cognitive Load**
+### **4. Developer-Friendly Design - Lower Cognitive Load**
 
 🔹 **Removes decision fatigue** – Developers always know where a new feature belongs.  
 🔹 **Boosts autonomy** – Junior and senior devs alike can contribute without overthinking structure.  
 🔹 **Faster onboarding** – New developers can grasp the structure quickly, reducing ramp-up time.  
 
-### ** 5. Debugging & Maintainability Advantages**
+### **5. Debugging & Maintainability Advantages**
 
 🔹 **Minimizes search time** – Scope awareness helps pinpoint issues faster.  
 🔹 **Reduces spaghetti code** – Code is naturally modular, making debugging simpler.  
@@ -91,7 +91,7 @@ These conceptual layers **translate into tangible project layers**, which dictat
 
 ## 📌  **Interfaces/Contract in the Architecture Model**
 
-### ** The Role of Interfaces**
+### **The Role of Interfaces**
 
 Interfaces serve as **contracts** between different layers of the architecture. They ensure that each layer interacts only with well-defined structures, preventing unintended dependencies and making the system **more scalable and maintainable**.  
 
@@ -103,7 +103,7 @@ This model introduces **three key interface types:**
 
 While these interfaces are distinct in their responsibilities, **they can sometimes overlap depending on the complexity of the project**. In smaller applications, the product and data interfaces may closely resemble each other, while in more complex systems, maintaining strict separation is essential for long-term scalability.
 
-### ** 1. Product Interface (Business Logic Layer → External Systems & UI)**
+### **1. Product Interface (Business Logic Layer → External Systems & UI)**
 
 ♻️ **Purpose:** Ensures that business logic is exposed in a controlled and structured way.  
 🚩**Why is this important?**
@@ -112,7 +112,7 @@ While these interfaces are distinct in their responsibilities, **they can someti
 - Decouples storage concerns from application logic.
 
 
-### ** 2. Data Interface (Repositories → Business Logic Layer)**
+### **2. Data Interface (Repositories → Business Logic Layer)**
 
 ♻️ **Purpose:** Translates raw storage structures (DB, cache, files) into a usable format for the business logic.  
 🚩**Why is this important?**
@@ -121,7 +121,7 @@ While these interfaces are distinct in their responsibilities, **they can someti
 - Encourages **clean separation** of concerns.
 
 
-### ** 3. UI Interface (Frontend Components → Business Logic Layer)**
+### **3. UI Interface (Frontend Components → Business Logic Layer)**
 
 ♻️ **Purpose:** Translates product data into a **UI-friendly** format for components.  
 🚩**Why is this important?**
@@ -130,7 +130,7 @@ While these interfaces are distinct in their responsibilities, **they can someti
 - Allows easier changes to UI structure without modifying core logic.
 
 
-### ** How These Interfaces Work Together**
+### **How These Interfaces Work Together**
 
 These three interface types ensure that each architectural layer remains **cleanly separated**, but their level of independence depends on the **scalability needs of the project**. In **small projects**, these interfaces may be closely intertwined, while in **larger systems**, enforcing a strict separation is crucial for preventing technical debt.
 
@@ -179,7 +179,7 @@ For a **Next.js** project that requires **a persistence layer and distributed ca
 
 ## 📌 **Advantages of This Architecture Model Over Existing Approaches**
 
-### ** 1. Business-Driven vs. Software-Driven Architectures**
+### **1. Business-Driven vs. Software-Driven Architectures**
 
 🔹 **Traditional Models:** Many architectures prioritize technical purity over business needs, leading to rigid structures that don’t adapt well to business changes. **DDD**, for example, focuses heavily on domain modeling but can create unnecessary complexity when rapid iteration is required.
 
@@ -188,7 +188,7 @@ For a **Next.js** project that requires **a persistence layer and distributed ca
 ✅ **Advantage:** A structure that scales with the business rather than against it.
 
 
-### ** 2. Simplicity & Scalability Compared to Existing Models**
+### **2. Simplicity & Scalability Compared to Existing Models**
 
 🔹 **Traditional Models:**
 - **MVC / Layered Architecture** → Simple, but scales poorly in complex applications.
@@ -199,7 +199,7 @@ For a **Next.js** project that requires **a persistence layer and distributed ca
 ✅ **Advantage:** Ensures projects don’t collapse under their own weight while staying intuitive for developers.
 
 
-### ** 3. Path Context vs. Deep Nesting in Other Models**
+### **3. Path Context vs. Deep Nesting in Other Models**
 
 🔹 **Traditional Models:**
 - Some architectures **force deep nesting** (e.g., Clean Architecture with multiple indirections), making navigation difficult.
@@ -210,7 +210,7 @@ For a **Next.js** project that requires **a persistence layer and distributed ca
 ✅ **Advantage:** Faster onboarding, reduced cognitive load, and improved maintainability.
 
 
-### ** 4. Scope Awareness vs. Undefined Change Impact**
+### **4. Scope Awareness vs. Undefined Change Impact**
 
 🔹 **Traditional Models:** Often lack clear guidance on **how much impact** a code change will have. This makes debugging unpredictable and large-scale refactors risky.
 
@@ -219,7 +219,7 @@ For a **Next.js** project that requires **a persistence layer and distributed ca
 ✅ **Advantage:** Debugging is faster, and refactors are done with **clear expectations of their consequences**.
 
 
-### ** 5. Horizontal Scalability vs. Vertical Overcomplication**
+### **5. Horizontal Scalability vs. Vertical Overcomplication**
 
 🔹 **Traditional Models:**
 - Force developers to **constantly modify existing files**, leading to bottlenecks in scaling.
@@ -258,7 +258,7 @@ For a **Next.js** project that requires **a persistence layer and distributed ca
 
 Modern software development requires an architecture that is **structured yet adaptable**, scalable but not over-engineered. **This model was built from real-world experience, bridging the gap between rigid methodologies and chaotic, unstructured projects.**
 
-#### ** Key Takeaways**
+#### **Key Takeaways**
 
 ✅ **Business-driven, not just software-driven** → Ensures architecture aligns with real company needs, whether it's a fast-moving startup or a long-term enterprise product.  
 ✅ **Path Context & Scope Awareness** → Makes the project easy to navigate and debug while reducing redundancy.  
@@ -266,7 +266,7 @@ Modern software development requires an architecture that is **structured yet ad
 ✅ **Developer-friendly & easy to adopt** → Reduces cognitive load, decision fatigue, and onboarding time.  
 ✅ **Flexible across different project types** → Works for consultancies, startups, and established products alike.  
 
-#### ** The Final Thought**
+#### **The Final Thought**
 
 While no architecture is perfect, **this model strikes a balance** between clarity, flexibility, and maintainability. It embraces **best practices without dogmatic complexity**, making it an excellent choice for teams that need to scale efficiently while keeping their codebase understandable.
 
