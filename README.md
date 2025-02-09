@@ -70,8 +70,7 @@ While these models offer valuable insights, they often fail in real-world applic
 🔹 **Reduces spaghetti code** – Code is naturally modular, making debugging simpler.  
 🔹 **Enforces structured decision-making** – Path Context & Scope work together to ensure clear separations.  
 
-
-(main graph)[./assets/graph.png]
+![main graph](./assets/graph.png)
 
 ## **📌 Core Foundations: The Three Logical Layers**  
 
