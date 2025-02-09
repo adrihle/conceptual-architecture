@@ -16,6 +16,7 @@ Having worked across all these environments—**consultancies, fast-scaling star
 
 💡 **This model was born out of necessity**—a balance between **clarity, scalability, and ease of adoption**. It’s designed to work **in real-world companies with real-world challenges**, ensuring that both **junior and senior developers** can understand, implement, and scale it efficiently.  
 
+
 ## **🔥 Introduction**
 
 Modern software architecture usually falls into one of two extremes:
@@ -36,4 +37,77 @@ While these models offer valuable insights, they often fail in real-world applic
 
 ---
 
+
+## 🚀 **Key Features of This Architecture Model**
+
+### **📌 1. Path Context - Self-Explanatory File Structure**
+
+🔹 **Removes redundant file names** – The directory path itself provides the necessary context.  
+🔹 **Enhances scalability** – New files can be added within a structured hierarchy without clutter.  
+🔹 **Improves navigation** – Developers can instantly understand a file's purpose just by looking at its path.  
+
+### **📌 2. Scope - Understanding the Impact of Changes**
+
+🔹 **Defines the influence of each file on the system** – Knowing whether an issue is isolated or critical saves debugging time.  
+🔹 **Prevents unintended side effects** – Ensures that modifications don’t break the entire application.  
+🔹 **Encourages maintainability** – Clear separation of responsibilities reduces complexity.  
+
+### **📌 3. Horizontal Code Scalability**
+
+🔹 **Encourages feature expansion without excessive refactoring** – New logic is introduced as additional files instead of modifying existing ones.  
+🔹 **Eliminates deep file nesting** – Keeps the structure flat and readable, reducing unnecessary layers of abstraction.  
+🔹 **Ensures a consistent approach to growth** – Scaling is based on new entities and functionalities, not arbitrary complexity.  
+
+### **📌 4. Developer-Friendly Design - Lower Cognitive Load**
+
+🔹 **Removes decision fatigue** – Developers always know where a new feature belongs.  
+🔹 **Boosts autonomy** – Junior and senior devs alike can contribute without overthinking structure.  
+🔹 **Faster onboarding** – New developers can grasp the structure quickly, reducing ramp-up time.  
+
+### **📌 5. Debugging & Maintainability Advantages**
+
+🔹 **Minimizes search time** – Scope awareness helps pinpoint issues faster.  
+🔹 **Reduces spaghetti code** – Code is naturally modular, making debugging simpler.  
+🔹 **Enforces structured decision-making** – Path Context & Scope work together to ensure clear separations.  
+
+
+(main graph)[./assets/graph.png]
+
+## **📌 Core Foundations: The Three Logical Layers**  
+
+Every business-driven software system must balance **three fundamental logical layers**, each tightly coupled to the company’s needs:  
+
+🔹 **Product/Business Logic** → Defines how the product behaves. This logic is **exclusive to the company** and is what differentiates one business from another.  
+🔹 **Implementation Logic** → Defines how the product is built. It describes the **type of product** (e.g., a web application, an API, a mobile app).  
+🔹 **Application Logic** → Defines how external technologies integrate into the product. It **connects third-party tools, libraries, and services** to the system.  
+
+These conceptual layers **translate into tangible project layers**, which dictate how the project structure should be organized.  
+
+### **📌 Project Structure Example (Next.js + Persistence + Distributed Cache)**  
+
+For a **Next.js** project that requires **a persistence layer and distributed caching**, the structure inside `/src` (or the project root) could be as follows:  
+
+#### **📂 `pages/` (Implementation + Business Logic)**  
+📌 **Description:** This belongs to the **implementation layer** but also contains **business logic**.  
+📌 **Why?** → It is **tightly coupled to Next.js**, defining how the application structures UI data based on its routing system.  
+
+#### **📂 `containers/` (Implementation + Business Logic)**  
+📌 **Description:** This belongs to the **implementation layer** but integrates **business logic**.  
+📌 **Why?** → It **renders UI components** (React) but also **handles UI behavior**, such as **form validation, CTAs (calls to action), and interaction flows.**  
+
+#### **📂 `components/` (Purely Implementation Layer - UI Focused)**  
+📌 **Description:** **100% presentational,** responsible for rendering HTML elements or integrating external UI libraries.  
+📌 **Why?** → It **knows nothing about the business** and can be **ported to another project using the same stack** without modifications.  
+
+#### **📂 `providers/` (Purely Application Layer - External Integrations)**  
+📌 **Description:** **Direct connectors** with external libraries, APIs, or third-party services.  
+📌 **Why?** → A `provider/cache.ts` could **manage Redis integration** but would never contain business-specific logic.  
+
+#### **📂 `services/` (Purely Business Layer - The Brain of the Application)**  
+📌 **Description:** The **core logic layer** responsible for structuring and processing business data.  
+📌 **Why?** → Services dictate **how company-specific data is transformed, manipulated, and exposed.**  
+
+#### **📂 `repositories/` (Business Layer + Engineering Optimization)**  
+📌 **Description:** Responsible for handling **persistence and storage interactions** (databases, caches, etc.).  
+📌 **Why?** → Unlike services, repositories **define the engineering-level optimizations of data storage and retrieval.**  
 
